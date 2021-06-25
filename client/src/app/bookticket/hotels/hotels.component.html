@@ -1,0 +1,113 @@
+<div class="row book-hotel-tickets">
+    <div class="container">
+        <div class="card w-100">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item" id="firstnav">
+                      <a class="nav-link" href="#" routerLink="/flights"><i class="fas fa-plane-departure"></i> Flights</a>
+                    </li>
+                    <li class="nav-item"id="firstnav">
+                      <a class="nav-link" href="#" routerLink="bookticket/hotels"><i class="fas fa-hotel"></i> Hotels</a>
+                    </li>
+                    <li class="nav-item"id="firstnav">
+                      <a class="nav-link" href="#"><i class="fas fa-bus"></i> Buses</a>
+                    </li>
+                    <li class="nav-item"id="firstnav">
+                      <a class="nav-link" href="#"><i class="fas fa-parachute-box"></i> Holidays</a>
+                    </li>
+                    <li class="nav-item"id="firstnav">
+                        <a class="nav-link" href="#"><i class="fas fa-train"></i> Trains</a>
+                    </li>
+                    <li class="nav-item"id="firstnav">
+                        <a class="nav-link" href="#"><i class="fas fa-taxi"></i> Cabs</a>
+                    </li>
+                    <li class="nav-item"id="firstnav">
+                        <a class="nav-link" href="#"><i class="fas fa-blog"></i> Blog</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="card-body">
+                  <form [formGroup]="searchHotelsForm" novalidate (ngSubmit)="searchHotelsClicked()">
+                      <div class="justify-content-center">
+                          <div class="row">
+                             <div class="col-md-3">
+                                <div class="form-label">
+                                    City, Location: 
+                                </div>
+                                <input type="text" list="cityloc" class="form-control" formControlName="location" placeholder="Goa, India"/>
+                                <datalist id="cityloc">
+                                    <option value="Mumbai"></option>
+                                    <option value="Pune"></option>
+                                    <option value="Mahabaleshwar"></option>
+                                    <option value="Ahmedabad"></option>
+                                    <option value="Jaipur"></option>
+                                    <option value="Udaipur"></option>
+                                    <option value="New Delhi"></option>
+                                    <option value="Agra"></option>
+                                    <option value="Varanasi"></option>
+                                    <option value="Gorakhpur"></option>
+                                    <option value="Allahabad"></option>
+                                    <option value="Dwarka"></option>
+                                    <option value="Mathura"></option>
+                                    <option value="Vrindavan"></option>
+                                    <option value="Manali"></option>
+                                </datalist>
+                             </div>
+                             <div class="col-md-3">
+                                <div class="form-label">
+                                    Check In
+                                </div>
+                                <input type="date" class="form-control" formControlName="checkindate"/>
+                             </div>
+                             <div class="col-md-3">
+                                <div class="form-label">
+                                    Check Out
+                                </div>
+                                <input type="date" class="form-control" formControlName="checkoutdate"/>
+                             </div>
+                             <div class="col-md">
+                                 <br>
+                                <input type="submit" value="Search" class="btn btn-success">
+                            </div>
+                            <div class="col-md">
+
+                            </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+    </div>
+
+   <div *ngIf=isHotelDataAval>
+     <div class="container" style="padding-bottom: 30px;">
+       <div class="card shadow-lg">
+         <div *ngFor="let hotel of hotelDataArray.data.body.searchResults.results">
+           <div class="card-body">
+             <div class="row">
+               <div class="col-md-4">
+                  <img src="{{hotel.optimizedThumbUrls.srpDesktop}}" width="300" height="200">  
+               </div>
+               <div class="col-md-5">       
+                    <p class="hotel-name"><i class="fas fa-hotel"></i> {{hotel.name}}</p>
+                    <p class="hotel-locality"><i class="fas fa-map-marker-alt"></i> {{hotel.address.locality}}, {{hotel.address.region}}, {{hotel.address.countryName}}</p>
+                    <p class="hotel-address"><i class="fas fa-address-card"></i> {{hotel.address.streetAddress}}, {{hotel.address.extendedAddress}}, {{hotel.address.postalCode}}</p>
+              </div>
+              <div class="col-md">
+                <br><br>
+                  <p class="hotel-price"><i class="fas fa-coins"></i> Price: {{hotel.ratePlan.price.current}}</p>
+                  <button class="btn btn-primary" (click)="router.navigate(['/book/hotel-ticket'])">Book Now</button>
+              </div>
+             </div>
+           </div>
+          </div>
+         </div>
+       </div>
+     </div>
+

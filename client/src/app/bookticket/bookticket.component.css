@@ -1,0 +1,16 @@
+.book-tickets{
+    padding-top: 85px;
+    padding-bottom: 60px;
+}
+#firstnav .nav-link{
+    font-size: 23px;
+    margin: 0 20px 0px 15px;
+  
+}
+#firstnav .nav-link{
+    color:dodgerblue;
+}
+.form-label{
+    font-size: 18px;
+    font-family: verdana;
+}

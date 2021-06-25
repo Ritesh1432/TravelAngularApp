@@ -1,0 +1,11 @@
+.class1{
+    padding-top: 63px;
+}
+#jumbotron1 {
+    padding: 70px 30px;
+    background-color: #00afff;
+    color: floralwhite;
+  }
+  .card-img-overlay {
+    background-color: rgba(#000, 0.4);
+  }

@@ -1,0 +1,48 @@
+.navbar-dark {
+    background-color:#008dff;
+  }
+  
+.navbar-item{
+    font-size: 20px;
+    font-family:monospace;
+}
+  /* Large Devices */
+@media (min-width: 1200px) {
+}
+
+/* Medium Devices */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .nav-item {
+    text-align: center;
+    padding: 15px;
+  }
+}
+#Navbar a {
+    transition: border-bottom;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    margin-right: 0;
+  }
+  
+  #Navbar a:hover {
+    border-bottom: 5px solid #512DA8;
+  }
+  
+  #Navbar {
+    margin-left: 20px;
+  }
+/* Small Devices */
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-item {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 767px){
+  .nav-item {
+    text-align: center;
+    padding: 10px;
+  }
+}

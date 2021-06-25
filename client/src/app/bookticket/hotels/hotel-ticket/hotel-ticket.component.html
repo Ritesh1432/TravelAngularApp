@@ -1,0 +1,84 @@
+
+<div class="container book-hotel-ticket">
+    <div class="card">       
+        <div class="card-header">
+           <h2 class="text-center" id="card-header">Book Hotel</h2>
+        </div>
+        <div class="card-body">
+           <form [formGroup]="bookHotelForm" (ngSubmit)= "bookHotel()">
+               <!-- Personal Information -->
+               <div class="row">
+                 <p id="personal-details-text">Personal Details</p>
+               </div>
+               <div class="row">
+                   <div class="col-12 col-md-6">
+                       <label class="col-form-label">First name:</label>
+                       <input type="text" class="form-control" placeholder="Enter your first name" formControlName="fname" required>
+                   </div>
+                   <div class="col-12 col-md-6">
+                    <label class="col-form-label">Last name:</label>
+                    <input type="text" class="form-control" placeholder="Enter your last name" formControlName="lname" required>
+                </div>
+               </div>
+               <div class="row">
+                <div class="col-12 col-md-6">
+                    <label class="col-form-label">Phone no:</label>
+                    <input type="tel" class="form-control" placeholder="+91 894 323 5532" formControlName="contactno" required>
+                </div>
+                <div class="col-12 col-md-6">
+                 <label class="col-form-label">Email:</label>
+                 <input type="email" class="form-control" placeholder="example@gmail.com" formControlName="emailid" required>
+             </div>
+            </div>
+
+            <!-- Reservation Details -->
+            <div class="row">
+                <p id="booking-details-text">Reservation Details</p>
+            </div> 
+             
+           <div class="row">
+            <div class="col-6 col-md-3">
+                <label class="col-form-label">Check-In Date:</label>
+                <input type="date" class="form-control" formControlName="checkindate" required>
+            </div>
+            <div class="col-6 col-md-3">
+                <label class="col-form-label">Check-In Time:</label>
+                <input type="time" class="form-control" formControlName="checkintime" required>
+            </div>
+               <div class="col-6 col-md-3">
+                   <label class="col-form-label">Check-Out Date:</label>
+                   <input type="date" class="form-control" formControlName="checkoutdate" required>
+               </div>
+               <div class="col-6 col-md-3">
+                   <label class="col-form-label">Check-Out Time:</label>
+                   <input type="time" class="form-control" formControlName="checkouttime" required>
+               </div>
+
+           </div>
+
+           <div class="row">
+            <div class="col-12 col-md-6">
+                <label class="col-form-label">Room Preference:</label>
+                <select name="travel-class" class="form-control" formControlName="roompref">
+                    <option value="Standard">Standard</option>
+                    <option value="Delux">Delux</option>
+                    <option value="Suite">Suite</option>
+                  </select>
+              </div>
+              <div class="col-6 col-md-3">
+                <label class="col-form-label">Adults(12+ yrs):</label>
+                <input type="number" class="form-control" placeholder="No of adults" formControlName="noofadults" required>
+            </div>
+            <div class="col-6 col-md-3">
+             <label class="col-form-label">Childrens(0-11 yrs):</label>
+             <input type="number" class="form-control" placeholder="No of childrens" formControlName="noofchildrens" required>
+           </div>
+           </div>
+           <br>
+           <div class="row">
+                  <button type="submit" class="btn btn-primary" [disabled]= "!bookHotelForm.valid">Book Hotel</button>    
+           </div>
+           </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.my-account{
+    padding-top: 70px;
+    padding-bottom: 400px;
+}
+.navigation-header-text{
+    font-size: 24px;
+    font-family: monospace;
+}
+.flight-tab-content-text{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.hotel-tab-content-text{
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}

@@ -1,0 +1,121 @@
+<div class="container book-flight-ticket">
+    <div class="card">       
+        <div class="card-header">
+           <h2 class="text-center" id="card-header">Book Flight</h2>
+        </div>
+        <div class="card-body">
+           <form [formGroup] = "bookFlightForm" (ngSubmit) = "bookFlight()">
+               <!-- Personal Information -->
+               <div class="row">
+                 <p id="personal-details-text">Personal Details</p>
+               </div>
+               <div class="row">
+                   <div class="col-12 col-md-6">
+                       <label class="col-form-label">First name:</label>
+                       <input type="text" class="form-control" placeholder="Enter your first name" formControlName="fname" required>
+                   </div>
+                   <div class="col-12 col-md-6">
+                    <label class="col-form-label">Last name:</label>
+                    <input type="text" class="form-control" placeholder="Enter your last name" formControlName="lname" required>
+                </div>
+               </div>
+               <div class="row">
+                <div class="col-12 col-md-6">
+                    <label class="col-form-label">Phone no:</label>
+                    <input type="tel" class="form-control" placeholder="+91 894 323 5532" formControlName="contactno" required>
+                </div>
+                <div class="col-12 col-md-6">
+                 <label class="col-form-label">Email:</label>
+                 <input type="email" class="form-control" placeholder="example@gmail.com" formControlName="emailid" required>
+             </div>
+            </div>
+
+            <!-- Trip Information -->
+            <div class="row">
+                <p id="trip-information-text">Trip Information</p>
+            </div> 
+             
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <label class="col-form-label">Source:</label>
+                    <input list="source-city" class="form-control"
+                    placeholder="Source City" formControlName="sourcecity" required>
+                    <datalist id="source-city">
+                      <option value="Mumbai-BOM"></option>
+                      <option value="Pune-PNQ"></option>
+                      <option value="Nanded-NDC"></option>
+                      <option value="Nagpur-NAG"></option>
+                      <option value="New Delhi-DEL"></option>
+                      <option value="Ahmedabad-AMD"></option>
+                      <option value="Surat-STV"></option>
+                      <option value="Bhuj-BHJ"></option>
+                      <option value="Varanasi-VNS"></option>
+                      <option value="Lucknow-LKO"></option>
+                      <option value="Agra-AGR"></option>
+                      <option value="Gorakhpur-GOP"></option>
+                      <option value="Kanpur-KNU"></option>
+                      <option value="Hyderabad-HYD"></option>
+                      <option value="Bhopal-BHO"></option>
+                      <option value="Gwalior-GWL"></option>
+                      <option value="Jaipur-JAI"></option>
+                      </datalist>
+                </div>
+                <div class="col-12 col-md-6">
+                 <label class="col-form-label">Destination:</label>
+                 <input list="destination-city" class="form-control" placeholder="Destination City" formControlName="destcity" required>
+                          <datalist id="destination-city">
+                            <option value="Mumbai-BOM"></option>
+                            <option value="Pune-PNQ"></option>
+                            <option value="Nanded-NDC"></option>
+                            <option value="Nagpur-NAG"></option>
+                            <option value="New Delhi-DEL"></option>
+                            <option value="Ahmedabad-AMD"></option>
+                            <option value="Surat-STV"></option>
+                            <option value="Bhuj-BHJ"></option>
+                            <option value="Varanasi-VNS"></option>
+                            <option value="Lucknow-LKO"></option>
+                            <option value="Agra-AGR"></option>
+                            <option value="Gorakhpur-GOP"></option>
+                            <option value="Kanpur-KNU"></option>
+                            <option value="Hyderabad-HYD"></option>
+                            <option value="Bhopal-BHO"></option>
+                            <option value="Gwalior-GWL"></option>
+                            <option value="Jaipur-JAI"></option>
+                            </datalist>
+             </div>
+            </div>
+           <div class="row">
+               <div class="col-12 col-md-6">
+                   <label class="col-form-label">Departure Date:</label>
+                   <input type="date" class="form-control" formControlName="deptdate" required>
+               </div>
+               <div class="col-6 col-md-3">
+                   <label class="col-form-label">Adults(12+ yrs):</label>
+                   <input type="number" class="form-control" placeholder="No of adults" formControlName="noofadults" required>
+               </div>
+               <div class="col-6 col-md-3">
+                <label class="col-form-label">Childrens(0-11 yrs):</label>
+                <input type="number" class="form-control" placeholder="No of childrens" formControlName="noofchildrens" required>
+            </div>
+           </div>
+
+           <div class="row">
+            <div class="col-12 col-md-6">
+                <label class="col-form-label">Travel Class:</label>
+                <select name="travel-class" class="form-control" formControlName="travelclass">
+                    <option value="Economy Class">Economy Class</option>
+                    <option value="Business Class">Business Class</option>
+                    <option value="First Class">First Class</option>
+                  </select>
+              </div>
+              <div class="col-12 col-md-3">
+                  <br><br>
+                  <button type="submit" class="btn btn-primary" [disabled]= "!bookFlightForm.valid">Book Flight</button>
+              </div>
+           </div>
+           
+
+           </form>
+        </div>
+    </div>
+</div>

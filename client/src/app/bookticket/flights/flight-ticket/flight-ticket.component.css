@@ -1,0 +1,23 @@
+.book-flight-ticket{
+    padding-top: 85px;
+    padding-bottom: 60px;
+}
+.card-header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#card-header{
+    font-family: cursive;
+}
+#personal-details-text{
+   font-size: 26px;
+   font-family: TImes New Roman;
+}
+#trip-information-text{
+   font-size: 26px;
+   font-family: TImes New Roman;
+   margin-top: 10px;
+}
+.col-form-label{
+   font-size: 18px;
+   font-family: monospace;
+}

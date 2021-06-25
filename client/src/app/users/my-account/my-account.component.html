@@ -1,0 +1,110 @@
+<div class="container my-account">
+    <ul class="nav nav-tabs row">
+        <li class="nav-item  col-sm-6">
+          <a class="nav-link" href="#flight-tab" role="tab" data-toggle="tab" target="_self">
+            <p class="text-center navigation-header-text">
+              Flight Tickets
+            </p>
+          </a>
+        </li>
+        <li class="nav-item col-sm-6">
+          <a class="nav-link" href="#hotel-tab" role="tab" data-toggle="tab" target="_self">
+            <p class="text-center navigation-header-text">
+             Hotel Tickets
+            </p>
+          </a>
+        </li>
+      </ul>
+      <div>
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade" id="flight-tab">
+       
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Source</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Departure date</th>
+                <th scope="col">No of adults</th>
+                <th scope="col">No of childrens</th>
+                <th scope="col">Travel class</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let flights of result">
+                  
+                    <tr  *ngIf="flights.typeof == 'Flight'">
+                        <td>{{flights.sourcecity}}</td>
+                        <td>{{flights.destcity}}</td>
+                        <td>{{flights.deptdate}}</td>
+                        <td>{{flights.noofadults}}</td>
+                        <td>{{flights.noofchildrens}}</td>
+                        <td>{{flights.travelclass}}</td>
+                      </tr>              
+            </tbody>
+          </table>
+
+        </div>             
+
+
+                  <!-- <div class="card shadow-lg">
+                      <div class="row">
+                        <div class="col-sm-2">
+                            <p class="flight-tab-content-text">Source</p>
+                          </div>
+                          <div class="col-sm-2">
+                            <p class="flight-tab-content-text">Destination</p>
+                          </div>
+                          <div class="col-sm-2">
+                            <p class="flight-tab-content-text">Departure Date</p>
+                          </div>
+                          <div class="col-sm-2">
+                            <p class="flight-tab-content-text">No of adults</p>
+                          </div>
+                          <div class="col-sm-2">
+                            <p class="flight-tab-content-text">No of childrens</p>
+                          </div>
+                          <div class="col-sm-2">
+                            <p class="flight-tab-content-text">Travel class</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div>
+                      <div *ngFor="let flights of result">
+                          <div *ngIf="flights.typeof == 'Flight'">
+                            <p>{{flights.fname}}</p>
+                          </div>
+                             
+                      </div>
+                  </div> -->
+
+
+              <div role="tabpanel" class="tab-pane fade" id="hotel-tab">
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">CheckIn</th>
+                        <th scope="col">CheckIn Time</th>
+                        <th scope="col">CheckOut</th>
+                        <th scope="col">CheckOut Time</th>
+                        <th scope="col">Preferred Room</th>
+                        <th scope="col">No of adults</th>
+                        <th scope="col">No of childrens</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let hotels of result">
+                          
+                            <tr  *ngIf="hotels.typeof == 'Hotel'">
+                                <td>{{hotels.checkindate}}</td>
+                                <td>{{hotels.checkintime}}</td>
+                                <td>{{hotels.checkoutdate}}</td>
+                                <td>{{hotels.checkouttime}}</td>
+                                <td>{{hotels.roompref}}</td>
+                                <td>{{hotels.noofadults}}</td>
+                                <td>{{hotels.noofchildrens}}</td>
+                              </tr>              
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+      </div>
+</div>

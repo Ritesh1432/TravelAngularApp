@@ -1,0 +1,38 @@
+<!-- Main Navbar -->
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+  <a class="navbar-brand" href="#" routerLink="/home" class="mr-auto"><img src="https://cdn.designbump.com/wp-content/uploads/2012/03/travel-logo-design-logos-logoset-templates-inspiration-inspiring-graphic-design-009.jpg" class="img-fluid" height="80" width="100"></a>
+
+  <div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+      <span class="navbar-toggler-icon"></span> 
+   </button>
+    <div class="collapse navbar-collapse" id="Navbar">
+       <!-- Main Navbar Items-->
+        <ul class="navbar-nav ml-auto">
+       <li class="navbar-item active"><a class="nav-link" routerLink="/home" href="#"><i class="fas fa-home"></i> Home</a></li>
+       <!-- <li class="navbar-item"><a class="nav-link" href="#">About</a></li> -->
+       <li class="navbar-item"><a class="nav-link" routerLink="/bookticket/flights" href="#"><i class="fab fa-telegram-plane"></i> Book Ticket</a></li>
+       <!-- <li class="navbar-item"><a class="nav-link" routerLink="/contactus" href="#">Contact Us</a></li>   -->
+       <li class="navbar-item" *ngIf="(!displayUsername)"><a class="nav-link" routerLink="/register" href="#"><i class="fas fa-user-circle"></i> Register/SignIn</a></li>
+       <li class="navbar-item" *ngIf="(displayUsername)"><a class="nav-link" routerLink="/my-account" href="#"><i class="fas fa-user-circle"></i> My Account</a></li>
+       <li class="navbar-item dropdown">
+        <a class="dropdown-toggle nav-link" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-th"></i>
+          More Options
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/about" href="#"><i class="fas fa-info"></i> About</a>
+          <a class="dropdown-item"  routerLink="/contactus" href="#"><i class="fas fa-address-card"></i> Contact Us</a>
+          <a class="dropdown-item" href="#"><i class="fas fa-download"></i> Download App</a>
+          <a class="dropdown-item" href="#" *ngIf="(displayUsername)" (click)="userLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+        </div>
+      </li>
+      <!-- <li class="navbar-item disabled"><a style="color: whitesmoke;" href="#" (click)="userLogout()">Logout</a></li> -->
+ 
+      </ul>
+  </div>
+ </div>
+</nav>
+
+
+
